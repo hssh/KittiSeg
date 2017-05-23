@@ -13,9 +13,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import json
+
 import tensorflow as tf
 
-import commentjson
 import logging
 import os
 import sys
@@ -105,7 +106,7 @@ def main(_):
 
     with open(tf.app.flags.FLAGS.hypes, 'r') as f:
         logging.info("f: %s", f)
-        hypes = commentjson.load(f)
+        hypes = json.load(f)
     utils.load_plugins()
 
     if tf.app.flags.FLAGS.mod is not None:
